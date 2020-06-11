@@ -15,5 +15,11 @@ Given o estudante com cpf  “10771553447” está armazenado no sistema com os 
 When Eu envio a auto-avaliação com os conceitos “MA”, “MA” e “MPA” para as metas  “requisitos”, “Gerência de configuração” e “Gerência de projetos” 
 Then sua auto-avaliação é armazenada com sucesso no sistema com os conceitos “MA”, “MA” e “MPA” para as metas  “requisitos”, “Gerência de configuração” e “Gerência de projetos” 
 
-
+Cenário: Erro na adição auto-avaliação
+Given Eu sou estudante com cpf  “10771553447”
+And da cadeira de “Engenharia de software”
+And Estou na página de “auto-avaliação” 
+When Eu adiciono os conceitos “MA”, “MA” para as metas de “requisitos” e  “Gerência de configuração” 
+And deixo a meta “Gerência de projetos” sem conceito
+Then Eu recebo mensagem notificando a ausência de conceito para a meta “Gerência de projetos”
 
