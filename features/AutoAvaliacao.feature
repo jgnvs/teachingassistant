@@ -23,3 +23,9 @@ When Eu adiciono os conceitos “MA”, “MA” para as metas de “requisitos�
 And deixo a meta “Gerência de projetos” sem conceito
 Then Eu recebo mensagem notificando a ausência de conceito para a meta “Gerência de projetos”
 
+Cenário: Erro na adição auto-avaliação
+Given o estudante com cpf  “10771553447” está armazenado no sistema com os conceitos “MA”, “MA” e “MA” para as metas para as metas  “requisitos”, “Gerência de configuração” e “Gerência de projetos” 
+When Eu envio a auto-avaliação com os conceitos “MA” e “MPA” para as metas  “requisitos” e “Gerência de projetos” 
+Then sua auto-avaliação não é armazenada no sistema pois o conceito para a meta “Gerência de configuração” não foi enviado.
+
+
