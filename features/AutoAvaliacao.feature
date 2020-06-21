@@ -29,4 +29,25 @@ When Eu envio a auto-avaliação com os conceitos “MA” e “MPA” para as m
 Then sua auto-avaliação não é armazenada no sistema 
 And uma mensagem é enviada informando que o conceito para a meta “Gerência de configuração” não foi enviado.
 
+Cenário: Nao houve discrepancia
+Given  estudante de cpf  “107” com conceitos  “MA”, “MA”, “MA”, “MA”, “MA” sobre as metas aprendidas
+And estudante de cpf  “107” com auto-avaliação “MA”, “MA”, “MA”, “MA”, “MA” sobre as metas aprendidas
+And  estudante de cpf  “715” com conceitos “MA”, “MA”, “MA”, “MA”, “MA” sobre as metas aprendidas
+And  estudante de cpf  “715” com auto-avaliação “MPA”, “MPA”, “MPA”, “MPA”, “MPA” sobre as metas aprendidas
+And  estudante de cpf  “447” com conceitos “MA”, “MA”, “MA”, “MA”, “MPA” sobre as metas aprendidas
+And  estudante de cpf  “447” com auto-avaliação “MA”, “MA”, “MA”, “MA”, “MA” sobre as metas aprendidas
+When entro na pagina “discrepancia_autoavaliacao”
+Then não vejo nenhum aluno na lista
+
+Cenario: Há discrepancia
+Given  estudante com cpf  “107” com conceitos  “MA”, “MA”, “MA”, “MA”, “MA” sobre as metas aprendidas
+And auto-avaliação com conceitos “MA”, “MA”, “MA”, “MA”, “MA” sobre as metas aprendidas
+And  estudante com cpf  “715” com conceitos “MA”, “MA”, “MA”, “MA”, “MA” sobre as metas aprendidas
+And auto-avaliação com conceitos “MPA”, “MPA”, “MPA”, “MPA”, “MPA” sobre as metas aprendidas
+And  estudante com cpf  “447” com conceitos “MA”, “MA”, “MANA”, “MPA”, “MPA” sobre as metas aprendidas
+And auto-avaliação com conceitos “MA”, “MA”, “MPA”, “MA”, “MA” sobre as metas aprendidas
+When entro na pagina “discrepancia_autoavaliacao”
+Then eu vejo o aluno com cpf “447” na lista
+
+
 
