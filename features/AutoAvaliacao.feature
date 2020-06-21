@@ -28,4 +28,13 @@ Given o estudante com cpf  “10771553447” está armazenado no sistema com os 
 When Eu envio a auto-avaliação com os conceitos “MA” e “MPA” para as metas  “requisitos” e “Gerência de projetos” 
 Then sua auto-avaliação não é armazenada no sistema pois o conceito para a meta “Gerência de configuração” não foi enviado.
 
+Given  estudante de cpf  “107” com conceitos  “MA”, “MA”, “MA”, “MA”, “MA” sobre as metas aprendidas
+And estudante de cpf  “107” com auto-avaliação “MA”, “MA”, “MA”, “MA”, “MA” sobre as metas aprendidas
+And  estudante de cpf  “715” com conceitos “MA”, “MA”, “MA”, “MA”, “MA” sobre as metas aprendidas
+And  estudante de cpf  “715” com auto-avaliação “MPA”, “MPA”, “MPA”, “MPA”, “MPA” sobre as metas aprendidas
+And  estudante de cpf  “447” com conceitos “MA”, “MA”, “MA”, “MA”, “MPA” sobre as metas aprendidas
+And  estudante de cpf  “447” com auto-avaliação “MA”, “MA”, “MA”, “MA”, “MA” sobre as metas aprendidas
+When entro na pagina “discrepancia_autoavaliacao”
+Then não vejo nenhum aluno na lista
+
 
