@@ -21,4 +21,5 @@ And da cadeira de “Engenharia de software”
 And Estou na página de “auto-avaliação” 
 When Eu adiciono os conceitos “MA”, “MA” para as metas de “requisitos” e  “Gerência de configuração” 
 And deixo a meta “Gerência de projetos” sem conceito
-Then Eu recebo mensagem notificando a ausência de conceito para a meta “Gerência de projetos”
+Then minha auto-avaliação não é adicionada
+And recebo uma mensagem notificando a ausencia de conceito para a meta “Gerência de projetos”
