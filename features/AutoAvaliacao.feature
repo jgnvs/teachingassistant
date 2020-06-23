@@ -22,35 +22,3 @@ And Estou na página de “auto-avaliação”
 When Eu adiciono os conceitos “MA”, “MA” para as metas de “requisitos” e  “Gerência de configuração” 
 And deixo a meta “Gerência de projetos” sem conceito
 Then Eu recebo mensagem notificando a ausência de conceito para a meta “Gerência de projetos”
-
-<<<<<<< HEAD
-Cenário: Erro na adição auto-avaliação
-Given o estudante com cpf  “10771553447” está armazenado no sistema com os conceitos “MA”, “MA” e “MA” para as metas para as metas  “requisitos”, “Gerência de configuração” e “Gerência de projetos” 
-When Eu envio a auto-avaliação com os conceitos “MA” e “MPA” para as metas  “requisitos” e “Gerência de projetos” 
-Then sua auto-avaliação não é armazenada no sistema 
-And uma mensagem é enviada informando que o conceito para a meta “Gerência de configuração” não foi enviado.
-
-Cenário: Nao houve discrepancia
-Given  estudante de cpf  “107” com conceitos  “MA”, “MA”, “MA”, “MA”, “MA” sobre as metas aprendidas
-And estudante de cpf  “107” com auto-avaliação “MA”, “MA”, “MA”, “MA”, “MA” sobre as metas aprendidas
-And  estudante de cpf  “715” com conceitos “MA”, “MA”, “MA”, “MA”, “MA” sobre as metas aprendidas
-And  estudante de cpf  “715” com auto-avaliação “MPA”, “MPA”, “MPA”, “MPA”, “MPA” sobre as metas aprendidas
-And  estudante de cpf  “447” com conceitos “MA”, “MA”, “MA”, “MA”, “MPA” sobre as metas aprendidas
-And  estudante de cpf  “447” com auto-avaliação “MA”, “MA”, “MA”, “MA”, “MA” sobre as metas aprendidas
-When entro na pagina “discrepancia_autoavaliacao”
-Then não vejo nenhum aluno na lista
-
-Cenario: Há discrepancia
-Given  estudante com cpf  “107” com conceitos  “MA”, “MA”, “MA”, “MA”, “MA” sobre as metas aprendidas
-And auto-avaliação com conceitos “MA”, “MA”, “MA”, “MA”, “MA” sobre as metas aprendidas
-And  estudante com cpf  “715” com conceitos “MA”, “MA”, “MA”, “MA”, “MA” sobre as metas aprendidas
-And auto-avaliação com conceitos “MPA”, “MPA”, “MPA”, “MPA”, “MPA” sobre as metas aprendidas
-And  estudante com cpf  “447” com conceitos “MA”, “MA”, “MANA”, “MPA”, “MPA” sobre as metas aprendidas
-And auto-avaliação com conceitos “MA”, “MA”, “MPA”, “MA”, “MA” sobre as metas aprendidas
-When entro na pagina “discrepancia_autoavaliacao”
-Then eu vejo o aluno com cpf “447” na lista
-
-
-
-=======
->>>>>>> parent of 6e92f03... criação dos cenário para servico de preenchimento mal sucedido da auto-avaliação
