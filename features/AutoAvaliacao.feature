@@ -22,3 +22,12 @@ And Estou na página de “auto-avaliação”
 When Eu adiciono os conceitos “MA”, “MA” para as metas de “requisitos” e  “Gerência de configuração” 
 And deixo a meta “Gerência de projetos” sem conceito
 Then Eu recebo mensagem notificando a ausência de conceito para a meta “Gerência de projetos”
+Cenário: Erro na adição auto-avaliação
+Given  estudante de cpf  “107” com conceitos  “MA”, “MA”, “MA”, “MA”, “MA” sobre as metas aprendidas
+And estudante de cpf  “107” com auto-avaliação “MA”, “MA”, “MA”, “MA”, “MA” sobre as metas aprendidas
+And  estudante de cpf  “715” com conceitos “MA”, “MA”, “MA”, “MA”, “MA” sobre as metas aprendidas
+And  estudante de cpf  “715” com auto-avaliação “MPA”, “MPA”, “MPA”, “MPA”, “MPA” sobre as metas aprendidas
+And  estudante de cpf  “447” com conceitos “MA”, “MA”, “MA”, “MA”, “MPA” sobre as metas aprendidas
+And  estudante de cpf  “447” com auto-avaliação “MA”, “MA”, “MA”, “MA”, “MA” sobre as metas aprendidas
+When entro na pagina “discrepancia_autoavaliacao”
+Then não vejo nenhum aluno na lista
