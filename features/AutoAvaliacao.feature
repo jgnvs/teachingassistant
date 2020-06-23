@@ -23,3 +23,24 @@ When Eu adiciono os conceitos “MA”, “MA” para as metas de “requisitos�
 And deixo a meta “Gerência de projetos” sem conceito
 Then minha auto-avaliação não é adicionada
 And recebo uma mensagem notificando a ausencia de conceito para a meta “Gerência de projetos”
+Then Eu recebo mensagem notificando a ausência de conceito para a meta “Gerência de projetos”
+
+Cenário: Nao ha discrepancia na auto-avaliacao
+Given  estudante de cpf  “107” com conceitos  “MA”, “MA”, “MA”, “MA”, “MA” sobre as metas aprendidas
+And estudante de cpf  “107” com auto-avaliação “MA”, “MA”, “MA”, “MA”, “MA” sobre as metas aprendidas
+And  estudante de cpf  “715” com conceitos “MA”, “MA”, “MA”, “MA”, “MA” sobre as metas aprendidas
+And  estudante de cpf  “715” com auto-avaliação “MPA”, “MPA”, “MPA”, “MPA”, “MPA” sobre as metas aprendidas
+And  estudante de cpf  “447” com conceitos “MA”, “MA”, “MA”, “MA”, “MPA” sobre as metas aprendidas
+And  estudante de cpf  “447” com auto-avaliação “MA”, “MA”, “MA”, “MA”, “MA” sobre as metas aprendidas
+When entro na pagina “discrepancia_autoavaliacao”
+Then não vejo nenhum aluno na lista
+
+Cenário: Ha discrepancia na auto-avaliacao
+Given  estudante com cpf  “107” com conceitos  “MA”, “MA”, “MA”, “MA”, “MA” sobre as metas aprendidas
+And auto-avaliação com conceitos “MA”, “MA”, “MA”, “MA”, “MA” sobre as metas aprendidas
+And  estudante com cpf  “715” com conceitos “MA”, “MA”, “MA”, “MA”, “MA” sobre as metas aprendidas
+And auto-avaliação com conceitos “MPA”, “MPA”, “MPA”, “MPA”, “MPA” sobre as metas aprendidas
+And  estudante com cpf  “447” com conceitos “MA”, “MA”, “MANA”, “MPA”, “MPA” sobre as metas aprendidas
+And auto-avaliação com conceitos “MA”, “MA”, “MPA”, “MA”, “MA” sobre as metas aprendidas
+When entro na pagina “discrepancia_autoavaliacao”
+Then vejo o aluno com cpf “447” na lista
