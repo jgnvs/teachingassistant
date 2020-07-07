@@ -25,7 +25,7 @@ Then minha auto-avaliacao nao e adicionada
 And recebo uma mensagem notificando a ausencia de conceito para a meta “Gerencia de projetos”
 Then Eu recebo mensagem notificando a ausencia de conceito para a meta “Gerencia de projetos”
 
-Cenário: Ha discrepancia na auto-avaliacao
+Cenario: Ha discrepancia na auto-avaliacao
 Given  estudante de cpf  “107” com conceitos  “MA”, “MA”, “MA”, “MA”, “MA” sobre as metas aprendidas
 And auto-avaliacao com conceitos “MA”, “MA”, “MA”, “MA”, “MA” sobre as metas aprendidas
 And  estudante de cpf  “715” com conceitos “MA”, “MA”, “MA”, “MA”, “MA” sobre as metas aprendidas
@@ -34,3 +34,5 @@ And  estudante de cpf  “447” com conceitos “MA”, “MA”, “MANA”, �
 And auto-avaliacao com conceitos “MA”, “MA”, “MPA”, “MA”, “MA” sobre as metas aprendidas
 When entro na pagina “discrepancia_autoavaliacao”
 Then vejo o aluno com cpf “447” na lista
+
+Cenario: visualizar percentual de discrepancia
