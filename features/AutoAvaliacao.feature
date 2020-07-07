@@ -16,7 +16,7 @@ When Eu envio a auto-avaliação com os conceitos “MA”, “MA” e “MPA”
 Then sua auto-avaliação é armazenada com sucesso no sistema com os conceitos “MA”, “MA” e “MPA” para as metas  “requisitos”, “Gerência de configuração” e “Gerência de projetos” 
 
 Cenário: Erro na adição auto-avaliação
-Given Eu sou estudante com cpf  “10771553447”
+Given sendo um estudante com cpf  “10771553447”
 And da cadeira de “Engenharia de software”
 And Estou na página de “auto-avaliação” 
 When Eu adiciono os conceitos “MA”, “MA” para as metas de “requisitos” e  “Gerência de configuração” 
