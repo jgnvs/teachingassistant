@@ -31,6 +31,18 @@ import { AlunoService } from './aluno.service';
               );
     } 
 
+    deletar(cpf: string): void {
+      this.alunoService.deletar(cpf)
+      .subscribe(
+        ar => {
+          if (ar) {
+            var index: number = this.alunos.findIndex(a => a.cpf == cpf);
+            this.alunos.splice(index, 1)
+          } 
+        }
+      )
+    }
+
     onMove(): void {
        this.error = false;
     }
